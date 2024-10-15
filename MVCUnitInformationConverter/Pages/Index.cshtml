@@ -1,0 +1,62 @@
+﻿@page
+@model MVCUnitInformationConverter.Pages.IndexModel
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Style.css">
+    <title>Online converter</title>    
+</head>
+<body>
+    <h1>Online Information Unit Converter</h1>
+
+    <form method="get" action="Index">
+        
+        <table>
+            <thead>
+				<tr>
+                    <th>The initial value</th>
+                    <th>The converted value</th>
+                </tr>
+            </thead>
+			<tbody>
+                <tr>
+                    <td>
+                        <input type="number" id="initialInf" name="initialInf" min="0" required value="@Model.InitialInf" />
+                    </td>
+                    <td>@Model.ConvertedInf</td>
+                </tr>
+                <tr>
+                    <td>
+                        <select id="initialVal" name="initialVal" value="@Model.InitialVal">
+                            <option>bit</option>
+                            <option>bytes</option>
+                            <option>kilobytes</option>
+                            <option>megabytes</option>
+                            <option>gigabytes</option>
+                            <option>tarabytes</option>
+                        </select>
+                    </td>
+                    <td>
+                        <select id="convertedVal" name="convertedVal" value="@Model.ConvertedVal">
+                            <option>bit</option>
+                            <option>bytes</option>
+                            <option>kilobytes</option>
+                            <option>megabytes</option>
+                            <option>gigabytes</option>
+                            <option>tarabytes</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+       <div>
+            <button>Convert</button>
+        </div>
+    </form>
+    
+</body>
+</html>
